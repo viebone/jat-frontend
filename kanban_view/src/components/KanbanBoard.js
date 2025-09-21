@@ -32,7 +32,12 @@ function KanbanBoard({ fetchCsrfToken }) {
   // Fetch user details with useCallback to avoid re-creation on each render
   const fetchUserDetails = useCallback(() => {
     console.log('Fetching user details...'); // Debugging log
-    axios.get(`${apiUrl}/api/user-details`, { withCredentials: true })
+    axios.get(`${apiUrl}/api/user-details`, { 
+      withCredentials: true,
+      headers:{
+        'Content-Type': 'application/json',
+      },
+     })
       .then(response => {
         console.log('User details fetched successfully:', response.data); // Debugging success log
         setNickname(response.data.nickname); // Set user nickname
