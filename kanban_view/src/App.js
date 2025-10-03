@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';  // Import BrowserRouter
-import Register from './components/Register';
-import Login from './components/Login';
-import KanbanBoard from './components/KanbanBoard';
+import Register from './journeys/authentication/Register';
+import Login from './journeys/authentication/Login';
+import KanbanBoard from './journeys/job_tracking/KanbanBoard';
 import axios from 'axios'; // Import axios for HTTP requests
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // Use a fallback URL if env var is missing
